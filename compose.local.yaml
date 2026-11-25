@@ -1,0 +1,17 @@
+name: tehmeshplane
+services:
+  mikrodash:
+    image: ghcr.io/secops-7/mikrodash:0.8.88@sha256:386eecea070f892b87f1b3a8b0a544de70dd03b5b65279956a7ff4b0c4492128
+    ports:
+      - "127.0.0.1:3081:3081"
+    volumes:
+      - data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3081/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+volumes:
+  data: {}

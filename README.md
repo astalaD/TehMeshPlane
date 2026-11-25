@@ -1,3 +1,22 @@
+# TehMeshPlane
+
+Панель для об’єднання маршрутизаторів MikroTik у спільну маршрутизовану Mesh LAN. Початкова версія запускає оригінальний MikroDash v0.8.88. Роботу над mesh-контролером описує [дорожня карта](roadmap/README.md).
+
+## Локальний запуск
+
+Запустіть Docker Desktop у режимі Linux containers і виконайте з каталогу репозиторію:
+
+```powershell
+docker compose -f compose.local.yaml up -d --wait
+docker compose -f compose.local.yaml logs mikrodash
+```
+
+Відкрийте [панель](http://127.0.0.1:3081). Створіть адміністратора за допомогою коду з журналу. Для перевірки стартової сторінки маршрутизатор не потрібен. Дані зберігаються у томі `tehmeshplane_data`. Команда `docker compose -f compose.local.yaml down` зупиняє панель зі збереженням даних.
+
+[Технічне завдання](roadmap/TECHNICAL_SPEC.md) · [Технічний аналіз](roadmap/ANALYSIS.md) · [Індекс файлів](roadmap/BASELINE-FILES.txt)
+
+## Документація оригінальної панелі
+
 <p align="center">
   <img src="web/public/logo.png" alt="MikroDash logo" width="96" height="96">
 </p>

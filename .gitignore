@@ -1,3 +1,16 @@
+.env.*
+!.env.example
+.obsidian/
+/data/
+/devdata/
+/private/
+*.rsc
+*.backup
+*.pfx
+*.key
+*.sqlite-wal
+*.sqlite-shm
+
 .env
 
 # ── Build output ──────────────────────────────────────────────────────────
